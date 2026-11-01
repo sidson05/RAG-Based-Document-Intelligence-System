@@ -1,0 +1,14 @@
+.git
+.gitignore
+.env
+.pytest_cache
+__pycache__
+*.py[cod]
+*.pyo
+venv/
+.venv/
+data/uploads/*
+data/page_images/*
+data/indices/*
+!data/sample_docs/
+!data/sample_docs/**

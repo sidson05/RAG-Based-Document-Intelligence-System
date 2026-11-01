@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  docintel:
+    build: .
+    container_name: docintel-rag-system
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - BACKEND_HOST=0.0.0.0
+      - BACKEND_PORT=8000
+      - FRONTEND_PORT=8501
+    volumes:
+      - ./data/uploads:/app/data/uploads
+      - ./data/page_images:/app/data/page_images
+      - ./data/indices:/app/data/indices
+    restart: unless-stopped
